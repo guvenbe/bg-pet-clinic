@@ -48,6 +48,5 @@
     </build>
     <scm>
         <developerConnection>scm:git:git@github.com:guvenbe/bg-pet-clinic.git</developerConnection>
-    <tag>bg-pet-clinic-0.0.1</tag>
   </scm>
 </project>
