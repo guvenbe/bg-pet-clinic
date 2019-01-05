@@ -3,7 +3,7 @@
     <parent>
         <artifactId>bg-pet-clinic</artifactId>
         <groupId>guru.springframework</groupId>
-        <version>0.0.1</version>
+        <version>0.0.2-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -53,7 +53,7 @@
     </build>
     <scm>
         <developerConnection>scm:git:git@github.com:guvenbe/bg-pet-clinic.git</developerConnection>
-      <tag>bg-pet-clinic-0.0.1</tag>
+      <tag>HEAD</tag>
   </scm>
 
 </project>
