@@ -3,10 +3,12 @@ package guru.springframework.bgpetclinic.services.map;
 import guru.springframework.bgpetclinic.model.Vet;
 import guru.springframework.bgpetclinic.services.CrudService;
 import guru.springframework.bgpetclinic.services.VetService;
+import org.springframework.stereotype.Service;
 import sun.rmi.runtime.Log;
 
 import java.util.Set;
 
+@Service
 public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
     @Override
     public Set<Vet> findAll() {
