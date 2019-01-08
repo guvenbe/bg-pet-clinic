@@ -1,25 +1,25 @@
 <!DOCTYPE html>
-<html lang="en"  xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'owners')}">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-    <<!--/*@thymesVar id="owner" type="guru.springframework.bgpetclinic.model.Owner"*/-->
+    <!--/*@thymesVar id="owner" type="guru.springframework.bgpetclinic.model.Owner"*/-->
     <h1 th:text="'List of Owner'">Owners List</h1>
     <table class="table table-striped">
         <thead>
         <tr>
-            <th style="width: 150px;">Id</th>
-            <th style="width: 150px;">first Name</th>
-            <th style="width: 150px;">last Name</th>
+            <th>Id</th>
+            <th>first Name</th>
+            <th>last Name</th>
         </tr>
         </thead>
         <tbody>
-        <tr th:each="owner: ${owners}">
-            <td> th:text="${owner.id}">1</td>
-            <td> th:text="${owner.firstName}">Joe</td>
-            <td> th:text="${owner.lastName}">Bark</td>
+        <tr th:each="owner : ${owners}">
+            <td th:text="${owner?.id}">1</td>
+            <td th:text="${owner?.firstName}">Joe</td>
+            <td th:text="${owner?.lastName}">Bark</td>
         </tr>
         </tbody>
     </table>
