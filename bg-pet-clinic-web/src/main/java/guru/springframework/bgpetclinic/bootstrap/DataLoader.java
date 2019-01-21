@@ -1,5 +1,6 @@
 package guru.springframework.bgpetclinic.bootstrap;
 
+
 import guru.springframework.bgpetclinic.model.Owner;
 import guru.springframework.bgpetclinic.model.Vet;
 import guru.springframework.bgpetclinic.services.OwnerService;
