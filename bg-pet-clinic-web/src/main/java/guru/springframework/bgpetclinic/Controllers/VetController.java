@@ -16,7 +16,7 @@ public class VetController {
 
     private final VetService vetService;
 
-    @RequestMapping({"/vets", "/vets/index", "/vets/index.html"})
+    @RequestMapping({"/vets", "/vets/index", "/vets/index.html", "/vets.html"})
     public String listOwners(Model model){
         model.addAttribute("vets", vetService.findAll());
         System.out.println(vetService.toString());
