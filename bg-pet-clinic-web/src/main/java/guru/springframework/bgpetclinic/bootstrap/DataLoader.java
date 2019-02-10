@@ -2,10 +2,7 @@ package guru.springframework.bgpetclinic.bootstrap;
 
 
 import guru.springframework.bgpetclinic.model.*;
-import guru.springframework.bgpetclinic.services.OwnerService;
-import guru.springframework.bgpetclinic.services.PetTypeService;
-import guru.springframework.bgpetclinic.services.SpecialtyService;
-import guru.springframework.bgpetclinic.services.VetService;
+import guru.springframework.bgpetclinic.services.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -19,12 +16,14 @@ public class DataLoader implements CommandLineRunner {
     private final VetService vetService;
     private final PetTypeService petTypeService;
     private final SpecialtyService specialtyService;
+    private final VisitService visitService;
 
-    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specialtyService) {
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specialtyService, VisitService visitService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
         this.specialtyService = specialtyService;
+        this.visitService = visitService;
     }
 
     @Override
@@ -89,7 +88,13 @@ public class DataLoader implements CommandLineRunner {
         fionasCat.setBirthDate(LocalDate.now());
         fionasCat.setPetType(savedCatPetType);
         owner2.getPets().add(fionasCat);
+        ownerService.save(owner2);
 
+        Visit catVisit= new Visit();
+        catVisit.setPet(fionasCat);
+        catVisit.setDate(LocalDate.now());
+        catVisit.setDescription("Sneezy Kitty");
+        visitService.save(catVisit);
 
         System.out.println("Loaded Owners....");
 

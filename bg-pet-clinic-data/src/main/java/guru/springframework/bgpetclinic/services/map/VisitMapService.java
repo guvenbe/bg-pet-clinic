@@ -3,9 +3,11 @@ package guru.springframework.bgpetclinic.services.map;
 
 import guru.springframework.bgpetclinic.model.Visit;
 import guru.springframework.bgpetclinic.services.VisitService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class VisitMapService extends AbstractMapService<Visit, Long> implements VisitService{
 
 
