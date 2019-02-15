@@ -1,14 +1,16 @@
 package guru.springframework.bgpetclinic.services.map;
 
-import guru.springframework.bgpetclinic.model.Specialty;
+import guru.springframework.bgpetclinic.model.Speciality;
 import guru.springframework.bgpetclinic.model.Vet;
 import guru.springframework.bgpetclinic.services.SpecialtyService;
 import guru.springframework.bgpetclinic.services.VetService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@Profile({"default","map"})
 public class VetMapService extends AbstractMapService<Vet, Long> implements VetService {
 
     private final SpecialtyService specialtyService;
@@ -32,8 +34,8 @@ public class VetMapService extends AbstractMapService<Vet, Long> implements VetS
         if (object.getSpecialties().size()>0){
             object.getSpecialties().forEach(specialty -> {
                 if(specialty.getId()==null){
-                    Specialty savedSpecialty = specialtyService.save(specialty);
-                    specialty.setId(savedSpecialty.getId());
+                    Speciality savedSpeciality = specialtyService.save(specialty);
+                    specialty.setId(savedSpeciality.getId());
                 }
             });
         }
